@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles1.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="typing-animation">
+        <span id="typed-text">Jomarie Avecilla</span> 
+    </div>
+    
+    <div class="container">
+        <h1>Your Digital Solutions - Creative Web Design & Reliable Tech Repairs.</h1>
+        <p id="typed-description"></p>
+        <a href="index.html" class="explore-button">Explore</a> 
+    </div>
+
+    <script>
+        const descriptionText = "Discover some of my recent works!";
+        const typedDescriptionElement = document.getElementById("typed-description");
+        let descriptionIndex = 0;
+        let typingSpeed = 150; 
+        let pauseDuration = 1000; 
+
+        function typeDescription() {
+            if (descriptionIndex < descriptionText.length) {
+                typedDescriptionElement.textContent += descriptionText.charAt(descriptionIndex);
+                descriptionIndex++;
+                setTimeout(typeDescription, typingSpeed);
+            } else {
+                setTimeout(resetDescriptionTyping, pauseDuration); 
+            }
+        }
+
+        function resetDescriptionTyping() {
+            typedDescriptionElement.textContent = ""; 
+            descriptionIndex = 0; 
+            typeDescription(); 
+        }
+
+        typeDescription(); 
+    </script>
+</body>
+</html>
